@@ -1,7 +1,6 @@
 ![xueersi.com](http://www.xueersi.com/static/img/logo/xrs_logo.png)
-
-#Front-end developer documentation
 <!-- 
+#Front-end developer documentation
 > Power by: xueersi.com 	
 > Update : 2012/10/24	
 > Author : Wu Jie ([Marco.Pai](http://www.marcopai.com))

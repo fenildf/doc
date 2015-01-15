@@ -8,7 +8,7 @@
 
 #### 省略外链资源 URL 协议部分
 
-省略外链资源（图片及其它媒体资源）URL 中的 `http` / `https` 协议，使 URL 成为相对地址，避免 [Mixed Content](https://developer.mozilla.org/en-US/docs/Security/MixedContent) 问题，减小文件字节数。
+省略外链资源（图片及其它媒体资源）URL 中的 `http` / `https` 协议，使 URL 成为相对地址，减小文件字节数。
 
 **其它协议（`ftp` 等）的 URL 不省略。**
 
@@ -86,7 +86,7 @@ color: #E5E5E5;
 **使用不带 BOM 的 UTF-8 编码。**
 
 - 在 HTML中指定编码 `<meta charset="utf-8">`；
-- 无需使用 `@charset` 指定样式表的编码，它默认为 UTF-8 （参考 [@charset](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset)）；
+- 无需使用 `@charset` 指定样式表的编码，它默认为 UTF-8 ；
 - 引用第三方 JS 文件时 `<script charset="">` 标签应指明外链文件编码，以避免不同编码文件混合使用时页面乱码。
 
 ```html
@@ -168,7 +168,7 @@ IE 支持通过 `<meta>` 标签来设置渲染前页面所应该采用的 IE 版
 ```html
 <!-- Recommended -->
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -567,9 +567,7 @@ div.error {}
 }
 ```
 
-**参考链接**：
 
-- [Shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
 
 #### 属性值为 `0` 时省略单位
 
@@ -613,8 +611,8 @@ color: #eebbcc;
 命名空间可以防止命名冲突，方便维护（查找和替换）。
 
 ```css
-.adw-help {} /* AdWords */
-#maia-note {} /* Maia */
+.xue-help {} /* xes help */
+#app-note {} /* xes app */
 ```
 
 #### 使用连字符 `-` 作为 ID、Class 名称界定符
@@ -709,7 +707,6 @@ CSS 中不要驼峰命名法和下划线。
 
 **参考：**
 
-- [Mozilla官方推荐CSS书写顺序](http://www.mozilla.org/css/base/content.css) 布局 - 具体元素样式
 - [Bootstrap CSS Comb 顺序](https://github.com/twbs/bootstrap/blob/master/less/.csscomb.json)
 - [RECESS - Twitter's CSS Hinter](http://twitter.github.io/recess/)
 
@@ -938,7 +935,6 @@ insert_final_newline = true
 - http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
 - http://css-tricks.com/css-style-guides/
 - http://24ways.org/2011/front-end-style-guides/
-- [Mozilla官方推荐CSS书写顺序](http://www.mozilla.org/css/base/content.css)
 - [Use efficient CSS selectors](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors)
 - [Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
 - [GitHub CSS Style Guide](https://github.com/styleguide/css)

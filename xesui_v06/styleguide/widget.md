@@ -1,13 +1,13 @@
-# Amaze UI Web 组件开发规范
+# Web 组件开发规范
 ---
 
-Web 组件基于 Amaze UI 基础库（[CSS](/css/) / [JS](/javascript)）开发，在基础库已有样式、功能的基础上做更多扩展。
+Web 组件基于 XESUI 基础库（[CSS](/css/) / [JS](/javascript)）开发，在基础库已有样式、功能的基础上做更多扩展。
 
 ## Web 组件样式组织
 
 Web 组件的样式有三个层级：
 
-1. Amaze UI 基础样式: 每个网站项目中都会默认引入以下基础样式，组件开发时应在以下样式的基础上进行。
+1. XESUI 基础样式: 每个网站项目中都会默认引入以下基础样式，组件开发时应在以下样式的基础上进行。
     - `variables.less`
     - `mixins.less`
     - `base.less`
@@ -15,7 +15,7 @@ Web 组件的样式有三个层级：
     - `block-grid.less`
     - `utility.less`
 
-2. Amaze UI 其他样式组件：Web 组件编写过程中使用到类似的样式时应当引入相关 [CSS 组件](/css/)，在此上进行微调，比如 `button.less`、`close.less`。
+2. XESUI 其他样式组件：Web 组件编写过程中使用到类似的样式时应当引入相关 [CSS 组件](/css/)，在此上进行微调，比如 `button.less`、`close.less`。
 
 3. Web 组件自身样式：Web 组件自身样式拆分出骨干样式和主题样式；每个 Web 组件可以有多个不同主题，主题基于骨干样式编写，每个主题相互独立。
     - 骨干样式以 `{widget}.less` 命名；
@@ -113,7 +113,7 @@ Web 组件核心描述文件，`json` 格式，下面的注释仅为方便解释
             // 主题使用配置选项
             "options": {},
             // 主题钩子
-            "hook": "hook-am-sample-default",
+            "hook": "hook-xue-sample-default",
             // 主题使用的less变量
             "variables": [
                 {
@@ -144,12 +144,12 @@ Web 组件核心描述文件，`json` 格式，下面的注释仅为方便解释
         }
     ],
 
-    // Amaze UI 核心js（无需修改）
+    // XESUI 核心js（无需修改）
     "jsBase": [
         "core.js"
     ],
 
-    // 依赖的 Amaze UI js 插件
+    // 依赖的 XESUI js 插件
     "jsDependencies": [],
 
     // 组件脚本
@@ -302,23 +302,23 @@ Web 组件更新历史记录。
 
 #### 模板 `{widget}.hbs`
 
-* `data-am-widget="figure"` 为统一标识符；
-* `.am-{Web 组件名}` 为 Web 组件基础标识符，Web 组件的所有子元素、主题、状态基于此命名；
-  Web 组件基础标识符采用 `am-{widget}` 方式命名，子元素、主题、状态采用 `am-{widget}-{子元素|主题|状态}`，如
-`am-figure-hover` 、 `am-figure-bd` 、 `am-figure-active` 、 `am-figure-ios7`。
+* `data-xue-widget="figure"` 为统一标识符；
+* `.xue-{Web 组件名}` 为 Web 组件基础标识符，Web 组件的所有子元素、主题、状态基于此命名；
+  Web 组件基础标识符采用 `xue-{widget}` 方式命名，子元素、主题、状态采用 `xue-{widget}-{子元素|主题|状态}`，如
+`xue-figure-hover` 、 `xue-figure-bd` 、 `xue-figure-active` 、 `xue-figure-ios7`。
 * 模板使用 `{{#this}}..{{this}}` 包裹（Web 组件使用时注册为 Handlebars `partial`，通过 `{{> widget data}}` 的形式调用。
 
 ```html
 {{#this}}
-  <figure data-am-widget="figure"
-      class="am-figure{{#if theme}} am-figure-{{theme}}{{else}} am-figure-default{{/if}}{{#if options.zoomble}} am-figure-zoomable{{/if}}{{#if widgetId}} {{widgetId}}{{/if}}{{#if className}} {{className}}{{/if}}"{{#if id}}
+  <figure data-xue-widget="figure"
+      class="xue-figure{{#if theme}} xue-figure-{{theme}}{{else}} xue-figure-default{{/if}}{{#if options.zoomble}} xue-figure-zoomable{{/if}}{{#if widgetId}} {{widgetId}}{{/if}}{{#if className}} {{className}}{{/if}}"{{#if id}}
       id="{{id}}"{{/if}}>
     {{#if content.img}}
       <img src="{{content.img}}" alt="{{#if content.imgAlt}}{{content.imgAlt}}{{else}}{{content.figcaption}}{{/if}}"/>
     {{/if}}
 
     {{#if content.figcaption}}
-       <figcaption class="am-figure-capition">
+       <figcaption class="xue-figure-capition">
          {{content.figcaption}}
        </figcaption>
     {{/if}}
@@ -329,7 +329,7 @@ Web 组件更新历史记录。
 **注意**：
 
 * Handlebars 模板中不支持 `<script>` 标签，如需加载外部脚本需在 `{widget}.js` 中进行。
-* 如果需要保存用户设置的选项，使用 `data-am-{widget}-{option}` 保存在模板中，然后在 `{widget}.js` 中通过 `attr('data-am-{widget}-{option}')` 读取。
+* 如果需要保存用户设置的选项，使用 `data-xue-{widget}-{option}` 保存在模板中，然后在 `{widget}.js` 中通过 `attr('data-xue-{widget}-{option}')` 读取。
 
 
 #### 核心样式 `{widget}.less`
@@ -337,12 +337,12 @@ Web 组件更新历史记录。
 Web 组件样式使用 less 编写。
 
 ```css
-.am-{widget} {
+.xue-{widget} {
 
-  .hook-am-{widget};
+  .hook-xue-{widget};
 }
 
-.hook-am-{widget}() {}
+.hook-xue-{widget}() {}
 ```
 
 样式添加必要的 `hook`，方便用户修改。
@@ -350,28 +350,28 @@ Web 组件样式使用 less 编写。
 #### 默认主题 `{widget}.defalt.less`
 
 ```css
-.am-{widget}-default {
+.xue-{widget}-default {
 
-  .hook-am-{widget}-default;
+  .hook-xue-{widget}-default;
 }
 
-.hook-am-{widget}-default() {}
+.hook-xue-{widget}-default() {}
 ```
 
 #### 其他主题 `{widget}.xxx.less`
 
 ```css
-.am-{widget}-xxx {
+.xue-{widget}-xxx {
 
-  .hook-am-{widget}-xxx;
+  .hook-xue-{widget}-xxx;
 }
 
-.hook-am-{widget}-xxx() {}
+.hook-xue-{widget}-xxx() {}
 ```
 
 #### Web 组件交互 `{widget}.js`
 
-Amaze UI 使用 Seajs 、Zepto，Widget 的脚本需按照 Seajs 规范编写。
+XESUI 使用 Seajs 、Zepto，Widget 的脚本需按照 Seajs 规范编写。
 
 __如果要在 JS 中动态插入外部样式、脚本，必须在 `load` 事件触发以后再执行相关操作，以免影响网页基本内容载入。__
 
@@ -399,7 +399,7 @@ npm install -g slush
 npm install -g slush-amuiwidget
 ```
 
-在 Amaze UI 项目根目录下面执行:
+在 XESUI 项目根目录下面执行:
 
 ```bash
 slush amuiwidget
@@ -409,7 +409,7 @@ slush amuiwidget
 
 按照规范开发完 Web 组件以后，可以在本地调试预览组件。
 
-在 Amaze UI 项目根目录下执行以下命令，安装依赖：
+在 XESUI 项目根目录下执行以下命令，安装依赖：
 
 ```
 npm install

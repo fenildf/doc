@@ -3,13 +3,13 @@
 
 ## 基本规范
 
-- [AllMobilize HTML/CSS Style Guide](/getting-started/html-css-guide)
+- [HTML/CSS Style Guide](/getting-started/html-css-guide)
 
 ## HTML/CSS 编写注意事项
 
 ### 基本原则
 
-- 以 `am` 为命名空间
+- 以 `xue` 为命名空间
 - 关注分离，将 HTML、CSS 解耦；模块化编码。
 
 ### 模块化编写实践
@@ -21,9 +21,9 @@
 如：
 
 ```html
-<div class="am-box">
-   <h2 class="am-box-hd">About the Site</h2>
-   <p class="am-box-bd">This is my blog where I talk about only the bestest things in the whole wide world.</p>
+<div class="xue-box">
+   <h2 class="xue-box-hd">About the Site</h2>
+   <p class="xue-box-bd">This is my blog where I talk about only the bestest things in the whole wide world.</p>
 </div>
 ```
 
@@ -37,24 +37,24 @@
 
 ```css
 /* 推荐写法 */
-.am-box {
+.xue-box {
 	border: 1px solid #333;
 }
 
-.am-box-hd {
+.xue-box-hd {
     margin: 0;
     padding: 5px 10px;
     border-bottom: 1px solid #333;
     background-color: #CCC;
 }
 
-.am-box-bd {
+.xue-box-bd {
     margin: 10px;
 }
 
 /* 不推荐写法 */
-.am-box .am-box-hd {}
-.am-box .am-box-bd {}
+.xue-box .xue-box-hd {}
+.xue-box .xue-box-bd {}
 ```
 
 * __与 JS 交互时，在模块 HTML 结构的最外一层添加状态，而非给模块每个子元素单独添加元素__。给最外层添加状态类以后，整个模块的样式都能控制，减少操作，提高性能。
@@ -62,18 +62,18 @@
 比如，可以这样写：
 
 ```html
-<div class="am-box am-box-active">
-   <h3 class="am-box-title"></h3>
-   <p class="am-box-content"></p>
+<div class="xue-box xue-box-active">
+   <h3 class="xue-box-title"></h3>
+   <p class="xue-box-content"></p>
 </div>
 ```
 
 但不要这样写（效率更低）：
 
 ```html
-<div class="am-box">
-   <h3 class="am-box-title am-box-title-active"></h3>
-   <p class="am-box-content am-box-content-active"></p>
+<div class="xue-box">
+   <h3 class="xue-box-title xue-box-title-active"></h3>
+   <p class="xue-box-content xue-box-content-active"></p>
 </div>
 ```
 
@@ -81,7 +81,7 @@
 
 * __语义化，望文见义__
 
-如 `am-tab`、`am-nav`，不要使用 `red`、`left` 等表象的词命名。
+如 `xue-tab`、`xue-nav`，不要使用 `red`、`left` 等表象的词命名。
 
 * __模块状态：__ `{命名空间}-{模块名}-{状态描述}`
 
@@ -94,23 +94,23 @@
 * __模块嵌套：__
 
 ```html
-<ul class="am-nav">
-    <li class="am-nav-item">
+<ul class="xue-nav">
+    <li class="xue-nav-item">
         <a href="#">nav Triggle Link</a>
-        <ul class="am-subnav">
-            <li class="am-subnav-item">
+        <ul class="xue-subnav">
+            <li class="xue-subnav-item">
                 <a href="#">subNav Triggle Link</a>
-                    <ul class="am-list">
+                    <ul class="xue-list">
 ```
 
-* __统一命名风格__（使用相同名词命名不同组件的子元素）：如 am-tab-hd, am-modal-hd，便于理解。
+* __统一命名风格__（使用相同名词命名不同组件的子元素）：如 xue-tab-hd, xue-modal-hd，便于理解。
 
 
 ### CSS 编写注意事项
 
 #### 不要添加浏览器厂商前缀
 
-Amaze UI 2.x 开始使用 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加浏览器厂商前缀，编写 CSS 时**不要添加浏览器前缀**，直接使用标准的 CSS 编写（也不要使用 mixins.less 里的前缀 mixin）。
+编写 CSS 时**不要添加浏览器前缀**，直接使用标准的 CSS 编写（也不要使用 mixins.less 里的前缀 mixin）。
 
 **特别说明**：
 
@@ -120,26 +120,26 @@ Amaze UI 2.x 开始使用 [Autoprefixer](https://github.com/postcss/autoprefixer
 
 #### 需要特别注意的 Class
 
-Amaze UI 中有两个表示状态的 class：
+XESUI 中有两个表示状态的 class：
 
-- `.am-active` - 激活
-- `.am-disabled` - 禁用
+- `.xue-active` - 激活
+- `.xue-disabled` - 禁用
 
 **不要单独使用、直接在里面编写样式！！！**
 
 ```css
 /* 可以嵌套用 */
-.am-nav .am-active {
+.xue-nav .xue-active {
   ...
 }
 
 /* 可以堆叠用 */
-.am-btn.am-active {
+.amF-btn.xue-active {
   ...
 }
 
 /* 绝不要单独用！！！ */
-.am-active {
+.xue-active {
   color: red;
 }
 ```

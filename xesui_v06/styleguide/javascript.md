@@ -3,7 +3,7 @@
 
 ## 基本编码规范
 
-* [AllMobilize JavaScript Style Guide](/getting-started/javascript-guide)
+* [JavaScript Style Guide](/getting-started/javascript-guide)
 * [CMD 模块定义规范](https://github.com/seajs/seajs/issues/242)
 
 ## 代码质量控制工具
@@ -59,8 +59,8 @@ var x = 1,
 
 1. 文件和目录名只能包含 `[a-z\d\-]`，并以英文字母开头
 2. 首选合适的英文单词 
-3. Data API 命名使用小写、用连字符连接、添加 `am` 命名空间，如 `data-am-trigger`
-4. 事件名使用小写字母，包含模块名及 `amui` 命名空间名，使用 `:` 连接（Zepto 不支持使用 `.` 链接的自定义事件），如 `.trigger('open:modal:amui')`
+3. Data API 命名使用小写、用连字符连接、添加 `xue` 命名空间，如 `data-xue-trigger`
+4. 事件名使用小写字母，包含模块名及 `xesui` 命名空间名，使用 `:` 连接（Zepto 不支持使用 `.` 链接的自定义事件），如 `.trigger('open:modal:amui')`
 5. 符合规范
    - 常量全大写 `UPPERCASE_WORD`
    - 变量驼峰 `camelName`
@@ -69,8 +69,8 @@ var x = 1,
 
 ### HTML Data API
 
-- 基本: `data-am-{组件名}`，如 `data-am-modal`、`data-am-navbar-qrcode`
-- 传参: `data-am-modal="{key1: 'val1', key2: false}"`，core.js 中增加一个专门解析参数的函数
+- 基本: `data-xue-{组件名}`，如 `data-xue-modal`、`data-xue-navbar-qrcode`
+- 传参: `data-xue-modal="{key1: 'val1', key2: false}"`，core.js 中增加一个专门解析参数的函数
 
 ### JavaScript
 
@@ -89,7 +89,7 @@ __规则：__
 * 尽量不与 jQuery 社区已有的习惯冲突。
 * 尽量写全。不用缩写，除非是下面列表中约定的。（变量以表达清楚为目标，uglify 会完成压缩体积工作）
 
-<table class="am-table am-table-bd am-table-striped">
+<table class="xue-table xue-table-bd xue-table-striped">
   <thead>
     <tr>
       <th>常用词</th>
@@ -296,7 +296,7 @@ function ready() {
 
 ## 参考链接
 
-Amaze UI 的编码规范参考了社区里一些先行者的做法，在此致谢！
+XESUI 的编码规范参考了一些先行者的做法，在此致谢！
 
 -  [注释规范](https://github.com/aralejs/aralejs.org/wiki/JavaScript-%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83)
 -  [编码风格](https://github.com/aralejs/aralejs.org/wiki/JavaScript-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC)

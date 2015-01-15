@@ -1,4 +1,4 @@
-# AllMobilize JavaScript Style Guide
+# JavaScript Style Guide
 
 ---
 
@@ -9,8 +9,7 @@
 
 ## JavaScript 语言规范
 
-### 使用[严格模式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Strict_mode)
-
+### 使用[严格模式
 ```javascript
 'use strict';
 
@@ -211,7 +210,7 @@ var myString = 'A rather long string of English text, an error message \
 #### 常量
 
 - 使用全大写字母，并用下划线分隔单词，形如 `CONST_NAME_LIKE_THIS`；
-- 因浏览器支持问题，不要使用 `const` [关键字](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)。
+- 因浏览器支持问题，不要使用 `const` 关键字。
 
 #### 变量
 

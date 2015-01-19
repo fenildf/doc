@@ -10,7 +10,9 @@
 
 &Resolution=900&&1600
 
-&ColorDepth=32&Referrer=http://www.xueersi.com/kc/16668-55748-139442/
+&ColorDepth=32
+
+&Referrer=http://www.xueersi.com/kc/16668-55748-139442/
 
 &ClientLanguage=zh-CN
 
@@ -37,6 +39,4 @@ HTTP/1.1" 404 780 "http://www.xueersi.com/kc/16668-55748-139443/" "Mozilla/5.0 (
 + AppName : 客户端浏览器名称
 + AppVersion : 客户端浏览器版本号
 + Timestamp : 页面刷新时间戳
-+ RefreshTime : 定时器刷新时间
 + xue_stat : 设置客户标识
-//用户自定义的网站标识
